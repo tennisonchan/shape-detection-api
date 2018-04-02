@@ -43,7 +43,7 @@ class Detector {
       .catch(console.error)
       .then(detectedFaces => {
         if (typeof this.faceDetectionHandler === 'function') {
-          this.faceDetectionHandler(detectedFaces, context);
+          this.faceDetectionHandler(detectedFaces, context, source);
         }
       });
 
@@ -57,7 +57,7 @@ class DetectorView {
     this.context = canvas.getContext('2d');
   }
 
-  processFace(source, detectedFaces, context) {
+  processFace(source, detectedFaces) {
     this.context.clearRect(0, 0, this.context.canvas.width, this.context.canvas.height);
 
     detectedFaces.forEach(({ boundingBox, landmarks }) => {

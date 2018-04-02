@@ -1,0 +1,15 @@
+{
+  "name": "shape-detection-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "tennisonchan <tennison.chan+gh@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@tensorflow/tfjs": "^0.6.1",
+    "@tensorflow/tfjs-converter": "^0.1.0"
+  },
+  "scripts": {
+    "tf-convert":
+      "tensorflowjs_converter --input_format=tf_saved_model --output_node_names='MobilenetV1/Predictions/Reshape_1' --saved_model_tags=serve /pretrained_models/saved_model /web_models/web_model"
+  }
+}
